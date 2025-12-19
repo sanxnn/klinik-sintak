@@ -260,3 +260,5 @@ if (form) {
   });
 }
 
+// =============== Run animations on initial load (fix blank screen) ===============
+document.addEventListener('DOMContentLoaded', animateOnScroll);
