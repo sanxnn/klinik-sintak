@@ -1,293 +1,1025 @@
-<!DOCTYPE html>
-<html lang="id">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="KlinikSintak — Jasa pengembangan aplikasi web & mobile dengan clean code dan arsitektur scalable."
-    />
-    <title>KlinikSintak • Solusi Teknologi, Dirancang dengan Presisi</title>
+    <title>Klinik Sintak — Premium Coding Agency, Web Dev & SEO Assassin</title>
+
+    <!-- 🚀 CDN TAILWIND CSS v4 -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Google Fonts: Plus Jakarta Sans buat Vibe Agensi Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon/android-chrome-192x192.png"
     />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="favicon/android-chrome-512x512.png"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <meta name="theme-color" content="#4f46e5" />
+
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+        --color-brand-dark: #0f172a; /* Slate 900 - Text Utama */
+        --color-brand-primary: #4f46e5; /* Indigo 600 - Core Brand */
+        --color-brand-secondary: #4338ca; /* Indigo 700 - Hover State */
+        --color-brand-accent: #10b981; /* Emerald 500 - Garansi Kelar */
+        --color-brand-muted: #64748b; /* Slate 500 - Sub-text */
+        --color-brand-bg: #f8fafc; /* Slate 50 - Background Clean */
+      }
+    </style>
   </head>
-  <body>
-    <!-- Navbar -->
-    <header class="navbar">
-      <div class="container">
-        <a href="#" class="logo"> <i class="fas fa-brain"></i> KlinikSintak </a>
-        <nav class="nav-menu" style="margin-left: -95px">
-          <ul>
-            <li><a href="#layanan" class="nav-link">Layanan</a></li>
-            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-            <li><a href="#kontak" class="nav-link">Kontak</a></li>
-          </ul>
-        </nav>
-        <div class="nav-actions">
-          <button id="lang-toggle" class="btn-lang">ID</button>
-          <button
-            id="theme-toggle"
-            class="theme-btn"
-            aria-label="Toggle dark mode"
+  <body
+    class="font-sans min-h-screen bg-brand-bg text-brand-dark antialiased overflow-x-hidden"
+  >
+    <!-- ==================== 1. NAVIGATION BAR ==================== -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <!-- Logo Brand -->
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-xl bg-brand-primary flex items-center justify-center p-2 shadow-lg shadow-brand-primary/20"
           >
-            <i class="fas fa-moon"></i>
-          </button>
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              ></path>
+            </svg>
+          </div>
+          <span
+            class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-brand-dark to-brand-primary bg-clip-text text-transparent"
+            >Klinik<span class="font-normal text-brand-muted"
+              >Sintak</span
+            ></span
+          >
+        </div>
+
+        <!-- Menu Navigasi -->
+        <div
+          class="hidden md:flex items-center gap-8 font-semibold text-sm text-brand-muted"
+        >
+          <a href="#services" class="hover:text-brand-dark transition-colors"
+            >Layanan</a
+          >
+          <a href="#pricing" class="hover:text-brand-dark transition-colors"
+            >Paket Harga</a
+          >
+          <a href="#workflow" class="hover:text-brand-dark transition-colors"
+            >Alur Kerja</a
+          >
+          <a href="#testimoni" class="hover:text-brand-dark transition-colors"
+            >Testimoni</a
+          >
+        </div>
+
+        <!-- Action Button -->
+        <div class="flex items-center gap-4">
+          <a
+            href="https://wa.me/message/VVMNU3LVME6WG1"
+            target="_blank"
+            class="bg-brand-dark text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-800 transition-all shadow-md shadow-slate-900/10 hover:-translate-y-0.5"
+            >Konsultasi Project</a
+          >
         </div>
       </div>
-    </header>
+    </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="fade-in">
-            Solusi Teknologi,<br /><span>Dirancang dengan Presisi</span>
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section class="relative pt-20 pb-28 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span
+            class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-semibold bg-brand-primary/10 text-brand-primary border border-brand-primary/20 mb-6"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse"
+            ></span>
+            Premium Development & SEO Assassin
+          </span>
+
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-brand-dark leading-[1.1] mb-6"
+          >
+            Lu Punya Project, <br />
+            <span
+              class="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent"
+              >Kita Sikat Sampai Kelar.</span
+            >
           </h1>
-          <p class="fade-in delay-1">
-            KlinikSintak membantu bisnis Anda tumbuh dengan aplikasi web &
-            mobile yang scalable, aman, dan mudah dikembangkan — dibangun dengan
-            <strong>clean code</strong> dan prinsip engineering terbaik.
-          </p>
-          <a href="#kontak" class="btn-primary fade-in delay-2"
-            >Konsultasi Gratis</a
+
+          <p
+            class="text-base sm:text-lg text-brand-muted leading-relaxed mb-10 max-w-2xl mx-auto"
           >
-        </div>
-        <div class="hero-illustration slide-up">
-          <svg width="100%" height="200" viewBox="0 0 400 200" fill="none">
-            <rect
-              x="50"
-              y="40"
-              width="80"
-              height="80"
-              rx="10"
-              fill="var(--slate-200)"
-            />
-            <rect
-              x="150"
-              y="60"
-              width="80"
-              height="60"
-              rx="8"
-              fill="var(--slate-300)"
-            />
-            <rect
-              x="250"
-              y="20"
-              width="100"
-              height="100"
-              rx="12"
-              fill="var(--slate-400)"
-            />
-            <circle cx="80" cy="150" r="6" fill="var(--slate-500)" />
-            <circle cx="200" cy="150" r="6" fill="var(--slate-500)" />
-            <circle cx="320" cy="150" r="6" fill="var(--slate-500)" />
-            <line
-              x1="85"
-              y1="150"
-              x2="195"
-              y2="150"
-              stroke="var(--slate-300)"
-              stroke-width="2"
-            />
-            <line
-              x1="205"
-              y1="150"
-              x2="315"
-              y2="150"
-              stroke="var(--slate-300)"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <!-- Layanan -->
-    <section class="section" id="layanan">
-      <div class="container">
-        <div class="section-header fade-in">
-          <h2>Layanan Kami</h2>
-          <p>
-            Dibangun untuk bisnis yang ingin berkembang dengan fondasi teknologi
-            yang kuat.
+            Gak usah begadang pusing mikirin bug logis atau ranking Google
+            anjlok. Klinik Sintak diisi tim engineer pro yang siap nge-joki
+            tugas kuliah, bangun MVP startup, bikin web bisnis, hingga optimasi
+            SEO sampai halaman satu. Clean, rapi, garansi aman.
           </p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card slide-up">
-            <div class="service-icon">
-              <i class="fas fa-laptop-code"></i>
-            </div>
-            <h3>Web Development</h3>
-            <p>
-              Aplikasi web custom: dashboard, SaaS, e-commerce, sistem internal
-              — menggunakan Laravel, React, Node.js.
-            </p>
-          </div>
-          <div class="service-card slide-up delay-1">
-            <div class="service-icon">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h3>Mobile Apps</h3>
-            <p>
-              Android & iOS dengan Flutter atau Kotlin — performa tinggi, UI/UX
-              intuitif, integrasi API aman.
-            </p>
-          </div>
-          <div class="service-card slide-up delay-2">
-            <div class="service-icon">
-              <i class="fas fa-plug"></i>
-            </div>
-            <h3>API & Integrasi</h3>
-            <p>
-              REST/GraphQL API, integrasi dengan sistem lama (legacy), payment
-              gateway, dan third-party services.
-            </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <a
+              href="https://wa.me/message/VVMNU3LVME6WG1"
+              target="_blank"
+              class="w-full sm:w-auto bg-brand-primary text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-brand-primary/25 hover:bg-brand-secondary transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
+            >
+              Order Joki Coding
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#pricing"
+              class="w-full sm:w-auto bg-white border border-slate-200 text-brand-dark px-8 py-4 rounded-xl font-semibold hover:bg-slate-50 transition-all"
+            >
+              Lihat Pricing List
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio -->
-    <section class="section bg-alt" id="portfolio">
-      <div class="container">
-        <div class="section-header fade-in">
-          <h2>Portofolio Kami</h2>
-          <p>
-            Berbagai solusi digital yang kami bangun untuk bisnis, UMKM, dan
-            institusi.
+    <!-- ==================== 3. DETAILED SERVICES SECTION ==================== -->
+    <section id="services" class="py-20 bg-white border-y border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-brand-dark">
+            Layanan Diagnosis & Penyembuhan Code
+          </h2>
+          <p class="text-brand-muted text-sm mt-2">
+            Setiap baris kode ditulis manual, lolos uji plagiarism checker, dan
+            berstandar industri tinggi.
           </p>
         </div>
 
-        <div class="portfolio-grid">
-          <!-- Company Profile -->
-          <div class="project-card slide-up">
-            <div class="project-img">
-              <i class="fas fa-building"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="border border-slate-200/70 rounded-2xl p-6 hover:border-brand-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-indigo-50 text-brand-primary flex items-center justify-center mb-5"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
             </div>
-            <div class="project-content">
-              <h3>Website Company Profile</h3>
-              <p>
-                Website profesional untuk perusahaan, startup, dan institusi —
-                menampilkan profil, layanan, portofolio, dan kontak dengan
-                desain modern.
-              </p>
-              <div class="project-tags">
-                <span>HTML</span><span>CSS</span><span>Laravel</span>
-              </div>
+            <h3 class="text-lg font-bold text-brand-dark mb-2">
+              Web Application (Fullstack)
+            </h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+              Bikin web kustom, Landing Page bisnis, Dashboard Admin, Sistem
+              Informasi Akademik, e-commerce, atau SaaS platform. Stack handal:
+              Laravel, React, Vue, PHP Native, Node.js.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 text-[10px] font-bold text-brand-muted"
+            >
+              <span class="px-2 py-1 bg-slate-100 rounded-md">LARAVEL</span>
+              <span class="px-2 py-1 bg-slate-100 rounded-md"
+                >VITE + TAILWIND</span
+              >
+              <span class="px-2 py-1 bg-slate-100 rounded-md"
+                >MYSQL / POSTGRES</span
+              >
             </div>
           </div>
 
-          <!-- Landing Page -->
-          <div class="project-card slide-up delay-1">
-            <div class="project-img">
-              <i class="fas fa-bullseye"></i>
+          <!-- Service 2 -->
+          <div
+            class="border border-slate-200/70 rounded-2xl p-6 hover:border-brand-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-emerald-50 text-brand-accent flex items-center justify-center mb-5"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                ></path>
+              </svg>
             </div>
-            <div class="project-content">
-              <h3>Landing Page Produk & Event</h3>
-              <p>
-                Landing page fokus konversi untuk promosi produk, event, atau
-                campaign digital dengan performa cepat dan SEO-friendly.
-              </p>
-              <div class="project-tags">
-                <span>Next.js</span><span>Tailwind</span><span>SEO</span>
-              </div>
+            <h3 class="text-lg font-bold text-brand-dark mb-2">
+              Mobile Apps (Android & iOS)
+            </h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+              Butuh joki aplikasi tugas akhir atau build produk mobile app
+              beneran? Kita buat pake framework cross-platform modern biar hemat
+              biaya dan performa super responsif.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 text-[10px] font-bold text-brand-muted"
+            >
+              <span class="px-2 py-1 bg-slate-100 rounded-md">FLUTTER</span>
+              <span class="px-2 py-1 bg-slate-100 rounded-md"
+                >REACT NATIVE</span
+              >
+              <span class="px-2 py-1 bg-slate-100 rounded-md"
+                >FIREBASE API</span
+              >
             </div>
           </div>
 
-          <!-- UMKM -->
-          <div class="project-card slide-up delay-2">
-            <div class="project-img">
-              <i class="fas fa-store"></i>
+          <!-- Service 3 -->
+          <div
+            class="border border-slate-200/70 rounded-2xl p-6 hover:border-brand-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center mb-5"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
             </div>
-            <div class="project-content">
-              <h3>Sistem Digital UMKM</h3>
-              <p>
-                Solusi digital untuk UMKM: katalog produk, pemesanan online,
-                manajemen pelanggan, dan integrasi WhatsApp.
-              </p>
-              <div class="project-tags">
-                <span>Laravel</span><span>MySQL</span><span>WhatsApp API</span>
-              </div>
+            <h3 class="text-lg font-bold text-brand-dark mb-2">
+              SEO Dominance & Speed Optimization
+            </h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+              Bukan sekadar website online, tapi juga mesin pencari duit. Kita
+              optimasi skor Core Web Vitals 100%, audit struktur link, dan racik
+              strategi SEO biar nembus page one Google.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 text-[10px] font-bold text-brand-muted"
+            >
+              <span class="px-2 py-1 bg-slate-100 rounded-md">SEO ON-PAGE</span>
+              <span class="px-2 py-1 bg-slate-100 rounded-md"
+                >CORE WEB VITALS</span
+              >
+              <span class="px-2 py-1 bg-slate-100 rounded-md">SPEED AUDIT</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Kontak -->
-    <section class="section" id="kontak">
-      <div class="container">
-        <div class="section-header fade-in">
-          <h2>Mulai Proyek Anda</h2>
-          <p>
-            Konsultasi gratis — tanpa kewajiban. Kami akan bantu definisikan
-            kebutuhan teknis & estimasi biaya.
+    <!-- ==================== 4. PRICING SECTION (SAAS LOOK) ==================== -->
+    <section id="pricing" class="py-20 bg-brand-bg">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-brand-dark">
+            Pilihan Paket Transparan
+          </h2>
+          <p class="text-brand-muted text-sm mt-2">
+            Sesuaikan budget lo dengan skala project yang mau lo eksekusi.
           </p>
         </div>
-        <div class="contact-grid">
-          <div class="contact-info fade-in">
-            <h3>Kontak Langsung</h3>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <a href="mailto:hello@kliniksintak.web.id" target="_blank"
-                  >admin@kliniksintak.web.id</a
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Tier 1 -->
+          <div
+            class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <h4
+                class="text-sm font-bold text-brand-muted uppercase tracking-wider mb-2"
+              >
+                Paket Mahasiswa (Tugas)
+              </h4>
+              <div class="text-3xl font-extrabold text-brand-dark mb-4">
+                Mulai 250k
+                <span class="text-xs font-medium text-brand-muted"
+                  >/ project</span
                 >
               </div>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-whatsapp"></i>
-              <div>
-                <a href="https://wa.me/6287862424607" target="_blank"
-                  >+62 878-6242-4607</a
-                >
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>Jember, Jawa Timur</div>
+              <p class="text-xs text-brand-muted mb-6 leading-relaxed">
+                Cocok buat tugas harian, tugas struktur data, web portofolio,
+                atau perbaikan bug kecil-kecilan.
+              </p>
+              <ul
+                class="text-xs text-brand-dark space-y-3 border-t border-slate-100 pt-6"
+              >
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Code Murni No Plagiarisme
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Penjelasan Alur Code
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Garansi 3 Hari Setelah Kelar
+                </li>
+              </ul>
             </div>
           </div>
-          <form class="contact-form fade-in delay-1" id="contact-form">
-            <input type="text" placeholder="Nama Anda" required />
-            <input type="email" placeholder="Email atau WhatsApp" required />
-            <textarea
-              placeholder="Ceritakan proyek Anda (fitur, timeline, dll)"
-            ></textarea>
-            <button type="submit" class="btn-primary">Kirim Permintaan</button>
-          </form>
+
+          <!-- Tier 2 (Featured Agensi Tier) -->
+          <div
+            class="bg-white border-2 border-brand-primary rounded-2xl p-8 shadow-md flex flex-col justify-between relative transform md:-translate-y-4"
+          >
+            <span
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider"
+              >Most Ordered</span
+            >
+            <div>
+              <h4
+                class="text-sm font-bold text-brand-primary uppercase tracking-wider mb-2"
+              >
+                Projek Skripsi / MVP
+              </h4>
+              <div class="text-3xl font-extrabold text-brand-dark mb-4">
+                Mulai 1.5jt
+                <span class="text-xs font-medium text-brand-muted"
+                  >/ system</span
+                >
+              </div>
+              <p class="text-xs text-brand-muted mb-6 leading-relaxed">
+                Pilihan tepat buat setup sistem full-stack skala Tugas
+                Akhir/Skripsi, atau aplikasi prototipe startup.
+              </p>
+              <ul
+                class="text-xs text-brand-dark space-y-3 border-t border-slate-100 pt-6"
+              >
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Full Database Schema & Use Case
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Free Ajarkan Alur Ujian/Sidang
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Full Responsive Mobile Layout
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Garansi Revisi Sampai ACC
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div
+            class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <h4
+                class="text-sm font-bold text-brand-muted uppercase tracking-wider mb-2"
+              >
+                Bisnis / Enterprise SEO
+              </h4>
+              <div class="text-3xl font-extrabold text-brand-dark mb-4">
+                Hubungi Kami
+                <span class="text-xs font-medium text-brand-muted"
+                  >/ custom</span
+                >
+              </div>
+              <p class="text-xs text-brand-muted mb-6 leading-relaxed">
+                Optimasi bisnis skala gede. Re-build website lambat jadi super
+                ngebut, setup SEO teknikal, & custom integrasi API.
+              </p>
+              <ul
+                class="text-xs text-brand-dark space-y-3 border-t border-slate-100 pt-6"
+              >
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Audit Kecepatan & Core Web Vitals
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Strategi Backlink Premium
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-brand-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Dedicated Support via WA Group
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>
-          <strong>KlinikSintak</strong> — Clean Code • Scalable Architecture •
-          User-Centric Design
-        </p>
-        <p>© 2025 KlinikSintak. Hak cipta dilindungi.</p>
-        <div class="social-links">
-          <a href="https://github.com/sanxnn"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/sanxnn"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a href="https://instagram.com/kliniksintak"
-            ><i class="fab fa-instagram"></i
-          ></a>
+    <!-- ==================== 5. WORKFLOW SECTION ==================== -->
+    <section id="workflow" class="py-20 bg-white border-t border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-brand-dark">
+            Alur Penyembuhan Code Tanpa Ribet
+          </h2>
+          <p class="text-brand-muted text-sm mt-2">
+            Sistem transparansi progres biar lu gak ngerasa kayak beli kucing
+            dalam karung.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto relative"
+        >
+          <!-- Step 1 -->
+          <div class="relative">
+            <div
+              class="w-8 h-8 rounded-lg bg-indigo-50 text-brand-primary flex items-center justify-center text-sm font-bold mb-4 border border-brand-primary/20"
+            >
+              01
+            </div>
+            <h4 class="text-sm font-bold text-brand-dark mb-1">
+              Konsultasi Gratis
+            </h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              Sampaikan detail fitur, deadline, dan mockup/referensi project ke
+              admin kita.
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative">
+            <div
+              class="w-8 h-8 rounded-lg bg-indigo-50 text-brand-primary flex items-center justify-center text-sm font-bold mb-4 border border-brand-primary/20"
+            >
+              02
+            </div>
+            <h4 class="text-sm font-bold text-brand-dark mb-1">
+              Deal & DP Awal
+            </h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              Setelah harga disepakati sesuai tingkat kesulitan, lo bayar DP
+              tanda keseriusan.
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative">
+            <div
+              class="w-8 h-8 rounded-lg bg-indigo-50 text-brand-primary flex items-center justify-center text-sm font-bold mb-4 border border-brand-primary/20"
+            >
+              03
+            </div>
+            <h4 class="text-sm font-bold text-brand-dark mb-1">
+              Live Demo / Review
+            </h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              Kita kasih tunjuk video demo / testing fungsional sistem pas
+              codingan mau kelar.
+            </p>
+          </div>
+          <!-- Step 4 -->
+          <div class="relative">
+            <div
+              class="w-8 h-8 rounded-lg bg-emerald-50 text-brand-accent flex items-center justify-center text-sm font-bold mb-4 border border-brand-accent/20"
+            >
+              04
+            </div>
+            <h4 class="text-sm font-bold text-brand-dark mb-1">
+              Pelunasan & Serah Terima
+            </h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              Sisa pembayaran dilunasi, source code lengkap beserta database
+              langsung di-push kirim.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6.5 TESTIMONI KLIEN (TRUST BUILDER) ==================== -->
+    <section id="testimoni" class="py-20 bg-white border-t border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-brand-dark">
+            Kata Mereka yang Sudah Sembuh
+          </h2>
+          <p class="text-brand-muted text-sm mt-2">
+            Ditinjau langsung dari kepuasan mahasiswa tingkat akhir hingga
+            pemilik bisnis lokal.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Testi 1: Mahasiswa Stress -->
+          <div
+            class="bg-slate-50/60 border border-slate-200/60 rounded-2xl p-6 relative flex flex-col justify-between"
+          >
+            <div>
+              <!-- Bintang Lima -->
+              <div class="flex items-center gap-1 text-amber-500 mb-4">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p class="text-xs text-brand-dark leading-relaxed italic mb-6">
+                "Gokil parah! H-3 sidang skripsi web Laravel gw eror struk
+                gara-gara symlink sama cache. Dibawa ke Klinik Sintak langsung
+                dibenerin total cuma beberapa jam. Dosen penguji sampai melongo
+                liat struktur codenya rapi banget. Auto lulus dapet A!"
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-3 border-t border-slate-200/40 pt-4"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-indigo-100 text-brand-primary flex items-center justify-center text-xs font-bold"
+              >
+                RF
+              </div>
+              <div>
+                <h5 class="text-xs font-bold text-brand-dark">Rian Fakhri</h5>
+                <p class="text-[10px] text-brand-muted">
+                  Mahasiswa Teknik Informatika, Malang
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testi 2: Owner Bisnis -->
+          <div
+            class="bg-slate-50/60 border border-slate-200/60 rounded-2xl p-6 relative flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-4">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p class="text-xs text-brand-dark leading-relaxed italic mb-6">
+                "Awalnya ragu karena harganya miring dibanding software house
+                gede. Tapi pas liat hasilnya, gila clean abis! Landing page toko
+                online gw dibuat pake Vite + Tailwind v4, super ngebut. Skor
+                Core Web Vitals ijo semua, orderan naik semenjak optimasi SEO."
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-3 border-t border-slate-200/40 pt-4"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-emerald-100 text-brand-accent flex items-center justify-center text-xs font-bold"
+              >
+                AM
+              </div>
+              <div>
+                <h5 class="text-xs font-bold text-brand-dark">Andi Wijaya</h5>
+                <p class="text-[10px] text-brand-muted">
+                  Owner Thrifting Store, Jakarta
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testi 3: Anak Sistem Informasi -->
+          <div
+            class="bg-slate-50/60 border border-slate-200/60 rounded-2xl p-6 relative flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-4">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p class="text-xs text-brand-dark leading-relaxed italic mb-6">
+                "Paling suka sama transparansinya. Tiap malem dikasih video
+                progres pengerjaan database sama layout-nya. Kerahasiaan
+                bener-bener dijaga aman, gak bakal ketahuan kalau ini hasil
+                joki. Klinik Sintak emang andalan anak SI males!"
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-3 border-t border-slate-200/40 pt-4"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xs font-bold"
+              >
+                SP
+              </div>
+              <div>
+                <h5 class="text-xs font-bold text-brand-dark">Siti Permata</h5>
+                <p class="text-[10px] text-brand-muted">
+                  Mahasiswi Sistem Informasi, Surabaya
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. FREQUENTLY ASKED QUESTIONS (FAQ) ==================== -->
+    <section id="faq" class="py-20 bg-brand-bg border-t border-slate-200/60">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-brand-dark">
+            Pertanyaan yang Sering Muncul (FAQ)
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="bg-white border border-slate-200 p-5 rounded-xl">
+            <h4 class="text-sm font-bold text-brand-dark mb-2">
+              Apakah kodenya aman dari plagiarisme kampus?
+            </h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              100% aman, cok! Kita gak pake cara copy-paste template busuk jaman
+              purba. Semua arsitektur kodingan ditulis dari nol (fresh code)
+              disesuaikan sama kebutuhan instruksi spesifik lo.
+            </p>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="bg-white border border-slate-200 p-5 rounded-xl">
+            <h4 class="text-sm font-bold text-brand-dark mb-2">
+              Kalau dosen/klien minta revisi gimana?
+            </h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              Tenang. Klinik Sintak ngasih garansi free revisi (selama gak
+              merombak total core sistem yang disepakati di awal) sampai project
+              lo benar-benar di-ACC atau running sempurna.
+            </p>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="bg-white border border-slate-200 p-5 rounded-xl">
+            <h4 class="text-sm font-bold text-brand-dark mb-2">
+              Kerahasiaan data aman gak bro?
+            </h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              Eksklusif dan rahasia. Identitas lo, nama kampus, atau nama brand
+              bisnis lo gak bakal pernah kita jadiin portofolio umum tanpa izin
+              tertulis dari lo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. FOOTER SECTION ==================== -->
+    <footer
+      class="bg-brand-dark text-slate-400 py-12 border-t border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b border-slate-800 pb-8"
+        >
+          <!-- Kolom Brand -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-8 h-8 rounded-lg bg-brand-primary flex items-center justify-center p-1.5 shadow-lg"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-lg font-extrabold tracking-tight text-white"
+                >Klinik<span class="font-normal text-slate-400"
+                  >Sintak</span
+                ></span
+              >
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+              Premium software house dan agensi manipulasi kode bawah tanah
+              terpercaya. Menyelesaikan segala komplikasi eror, logika
+              algoritma, dan tantangan ranking mesin pencari secara instan.
+            </p>
+          </div>
+
+          <!-- Kolom Navigasi Cepat -->
+          <div>
+            <h4
+              class="text-white text-xs font-bold uppercase tracking-wider mb-4"
+            >
+              Layanan Joki
+            </h4>
+            <ul class="text-xs space-y-2.5">
+              <li>
+                <a href="#services" class="hover:text-white transition-colors"
+                  >Web Dev Custom</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition-colors"
+                  >Mobile App Production</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition-colors"
+                  >SEO Specialist</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition-colors"
+                  >Bug Fixing & Tuning</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom Kebijakan -->
+          <div>
+            <h4
+              class="text-white text-xs font-bold uppercase tracking-wider mb-4"
+            >
+              Garansi & Legalitas
+            </h4>
+            <ul class="text-xs space-y-2.5">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Kebijakan Revisi</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Hubungi Kami</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hak Cipta Bawah -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500"
+        >
+          <p>&copy; 2026 Klinik Sintak Generation. All rights reserved.</p>
+          <div
+            class="mt-2 sm:mt-0 flex items-center gap-2 text-slate-500 font-medium"
+          >
+            <span>Built with</span>
+            <!-- Jantung Berdetak Mulus (Animate Pulse bawaan Tailwind v4) -->
+            <span class="text-rose-500 inline-block animate-pulse scale-110"
+              >❤️</span
+            >
+            <span>for</span>
+            <!-- Teks Elite dengan Efek Glow Halus & Border Tipis Berkelas -->
+            <span class="relative group cursor-pointer">
+              <span
+                class="text-white font-bold tracking-wide transition-all duration-300 group-hover:text-indigo-400 bg-linear-to-r from-indigo-200 to-white bg-clip-text text-transparent shadow-xs"
+              >
+                Klinik Sintak Generation
+              </span>
+              <!-- Garis bawah interaktif tipis ala SaaS -->
+              <span
+                class="absolute bottom-0 left-0 w-0 h-[1px] bg-indigo-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </span>
+          </div>
         </div>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <button
+      id="btnBackToTop"
+      onclick="scrollToTop()"
+      class="fixed bottom-6 right-6 z-50 p-3 rounded-xl bg-brand-dark/90 backdrop-blur-sm text-white shadow-xl border border-slate-700/50 hover:bg-brand-primary hover:-translate-y-1 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none cursor-pointer group"
+    >
+      <svg
+        class="w-5 h-5 group-hover:animate-bounce"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        ></path>
+      </svg>
+    </button>
+    <script>
+      const btnBackToTop = document.getElementById("btnBackToTop");
+
+      // Mengamati scroll browser
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          // Kalau scroll ke bawah lebih dari 300px, munculkan tombol dengan efek smooth
+          btnBackToTop.classList.remove(
+            "opacity-0",
+            "translate-y-10",
+            "pointer-events-none",
+          );
+          btnBackToTop.classList.add("opacity-100", "translate-y-0");
+        } else {
+          // Kalau di atas, sembunyikan lagi
+          btnBackToTop.classList.remove("opacity-100", "translate-y-0");
+          btnBackToTop.classList.add(
+            "opacity-0",
+            "translate-y-10",
+            "pointer-events-none",
+          );
+        }
+      };
+
+      // Fungsi pas tombol diklik, auto-scroll ke paling atas dengan halus
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
   </body>
 </html>
